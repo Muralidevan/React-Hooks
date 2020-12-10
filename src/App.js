@@ -1,5 +1,5 @@
 import './App.css';
-import React,{createContext, useContext, useDebugValue} from 'react'
+import React,{createContext,useReducer} from 'react'
 // import ClassCounter from './components/ClassCounter'
 // import ClassCounterTwo from './components/ClassCounterTwo'
 
@@ -16,6 +16,16 @@ import React,{createContext, useContext, useDebugValue} from 'react'
 // import IntervalHooksCounter from './components/IntervalHooksCounter'
 // import DataFetching from './components/DataFetching'
 import ComponentC from './components/ContextApi/ComponentC'
+import ComponentA from './components/ContextApi/ComponentA'
+import ComponentB from './components/ContextApi/ComponentB'
+
+import DataFetchingTwo from './components/ContextApi/DataFetchingTwo'
+
+
+
+// import CounterReducerTwo from './components/UseReducer/CounterReducerTwo'
+import MultipleReducer from './components/UseReducer/MultipleReducer'
+
 
 
 // * step1- Create Context
@@ -24,6 +34,26 @@ export const UserContext = createContext()
 // * demo -context multiple value
 export const ChannelContext = createContext()
 
+export const CountContext = createContext()
+
+
+const initialState = 0
+
+const reducer = (state,action)=>{
+
+    switch(action){
+        case 'increment':
+            return state + 1
+        case 'decrement':
+            return state - 1
+        case 'reset':
+            return initialState
+        default:
+            return state
+    }
+
+}
+
 
 
 
@@ -31,17 +61,31 @@ export const ChannelContext = createContext()
 
 // * step 3 - consume context value e.g componentF
       function App() {
+
+        const [count,dispatch]= useReducer(reducer,initialState)
         return (
           <div className="App">
+            {/* Count {count} */}
+<DataFetchingTwo/>
+            
 
 
-
+{/* 
 <UserContext.Provider value={'murali'}>
   <ChannelContext.Provider value={'devan'}>
   <ComponentC/>
+ 
 
   </ChannelContext.Provider>
-</UserContext.Provider>
+</UserContext.Provider> */}
+
+{/* <CountContext.Provider value={{countState:count,countDispatch:dispatch}}>
+<ComponentA/>
+  <ComponentB/>
+<ComponentC/>
+</CountContext.Provider> */}
+
+
            
           {/* <ClassCounter/>
           <ClassCounterTwo/>
@@ -60,6 +104,8 @@ export const ChannelContext = createContext()
 {/* <DataFetching/> */}
 
  {/*  Context API */}
+ {/* <CounterReducerTwo/> */}
+ {/* <MultipleReducer/> */}
 
 
 

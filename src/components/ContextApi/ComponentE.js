@@ -1,6 +1,7 @@
 import React ,{useContext} from 'react'
-// import ComponentF from './ComponentF'
-import {  UserContext,ChannelContext} from '../../App';
+import ComponentF from './ComponentF'
+import ComponentFTwo from './ComponentFTwo'
+// import {  UserContext,ChannelContext} from '../../App';
 
 
 // * step1 - import useContext Hook
@@ -10,12 +11,13 @@ import {  UserContext,ChannelContext} from '../../App';
 
 const ComponentE = () => {
 
-   const user=  useContext(UserContext)
-    const channel = useContext(ChannelContext)
+//    const user=  useContext(UserContext)
+//     const channel = useContext(ChannelContext)
     return (
         <div>
-            User {user} , Channel {channel}
+            {/* User {user} , Channel {channel} */}
             {/* <ComponentF/> */}
+            <ComponentFTwo/>
         </div>
     )
 }
