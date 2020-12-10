@@ -8,11 +8,11 @@ const HookCounterTwo = () => {
 
     const incrementCountFive = ()=>{
         for(let i=0;i<5;i++){
-            // setCount(count=>count + 1) --Output:count:1
-            //reason setCount function is asynchronous and
-            //  react batches multiple setCount functions together so that it can render UI efficiently
+            // * setCount(count=>count + 1) --Output:count:1
+            // * reason setCount function is asynchronous and
+            // *  react batches multiple setCount functions together so that it can render UI efficiently
            
-         setCount(prevState=> prevState + 1  ) //O/p:count:5 ,setCount((prevState)=>{prevState+1}),setCount(callback)
+         setCount(prevState=> prevState + 1  ) //* O/p:count:5 ,setCount((prevState)=>{prevState+1}),setCount(callback)
         }
     }
     return (

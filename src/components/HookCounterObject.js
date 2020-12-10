@@ -23,14 +23,7 @@ const HookCounterObject = () => {
     <h2>Your LastName is:{name.lastName}</h2>
 
     <h3>{JSON.stringify(name)}</h3>
-   
-
-
-
-            </form>
-           
-          
-
+       </form>
         </div>
     )
 }
